@@ -1,0 +1,35 @@
+﻿<div class="text-center">
+    <h1 class="display-4">Welcome To SOW Run @DateTime.Now</h1>
+    <br />
+    @if (!User.Identity.IsAuthenticated)
+    {
+        <div class='parent'>
+            <div class='child'> <a class="nav-link display-6" asp-controller="Employees" asp-action="Registration">Register</a></div>
+            <div class='child'> <a class="nav-link display-6" asp-controller="Employees" asp-action="Login">Login</a></div>
+        </div>
+    }
+    else
+    {
+        <div class='parent'>
+            <div class='child'>
+                <a class="nav-link display-6" asp-controller="Employees" asp-action="Logout">Logout</a>
+                </div>
+        </div>
+    }
+
+</div>
+
+<style>
+    .parent {
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 2rem 2rem;
+  text-align: center;
+}
+.child {
+  display: inline-block;
+  border: 1px solid red;
+  padding: 1rem 1rem;
+  vertical-align: middle;
+}
+</style>
